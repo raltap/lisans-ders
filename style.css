@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; /* Body padding'ini sıfırla, içerik kendi padding'ini alacak */
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex; /* Sidebar ve main-content'i yan yana koymak için */
+}
+
+#sidebar {
+    width: 220px; /* Sabit menü genişliği */
+    background-color: #343a40; /* Koyu gri arkaplan */
+    color: white;
+    padding: 20px;
+    position: fixed; /* Ekranda sabit kalmasını sağlar */
+    height: 100%; /* Tam ekran yüksekliği */
+    overflow-y: auto; /* İçerik sığmazsa kaydırma çubuğu çıkar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Başlık rengi */
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px; /* Liste öğeleri arasına boşluk */
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Tüm alan tıklanabilir olsun */
+    padding: 8px 10px; /* Tıklama alanını genişlet */
+    border-radius: 4px; /* Hafif yuvarlak köşeler */
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: #007bff; /* Hover'da mavi arkaplan */
+}
+
+#main-content {
+    margin-left: 220px; /* Sidebar genişliği kadar boşluk bırak */
+    padding: 20px;
+    flex-grow: 1; /* Kalan alanı kapla */
+}
+
+section {
+    margin-bottom: 40px; /* Bölümler arasına boşluk */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; /* Bölümler arasına ince çizgi */
+}
+
+section:last-child {
+    border-bottom: none; /* Son bölümden sonra çizgi olmasın */
+}
+
+h2 {
+    color: #0056b3;
+    margin-top: 0;
+    padding-top: 0;
+    border-bottom: 2px solid #007bff; /* Ana başlık altına belirgin çizgi */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #555;
+    margin-top: 25px; /* Alt başlık üst boşluğu */
+    margin-bottom: 15px; /* Alt başlık alt boşluğu */
+}
+
+p {
+    margin-bottom: 15px; /* Paragraf alt boşluğu */
+}
+
+ul {
+    margin-bottom: 15px; /* Liste alt boşluğu */
+    padding-left: 25px; /* Liste sol boşluğu */
+}
+
+li {
+    margin-bottom: 8px; /* Liste öğeleri arasına boşluk */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Resimler için stil */
+#main-content img {
+    max-width: 100%; /* İçerik alanını aşmasın */
+    height: auto; /* Oranları koru */
+    display: block; /* Resmi blok element yap */
+    margin: 20px auto; /* Üstten/alttan boşluk ve yatayda ortala */
+    border: 1px solid #ccc; /* Hafif çerçeve */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0; /* Yatay çizgi üst/alt boşluğu */
+}
