@@ -7,16 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Menü açma/kapama fonksiyonu
     function toggleSidebar() {
         sidebar.classList.toggle('open');
-        adjustMainContentMargin();
-    }
-
-    // İçerik alanının sol boşluğunu ayarlama fonksiyonu
-    function adjustMainContentMargin() {
-        if (sidebar.classList.contains('open')) {
-            mainContent.style.marginLeft = `${sidebar.offsetWidth}px`;
-        } else {
-            mainContent.style.marginLeft = '0';
-        }
+        mainContent.classList.toggle('sidebar-open');
     }
 
     // Menü butonuna tıklandığında menüyü aç/kapat
@@ -45,9 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sayfa yüklendiğinde içerik alanının boşluğunu ayarla
-    adjustMainContentMargin();
+    // Sayfa yüklendiğinde veya boyut değiştiğinde başlangıç durumu
+    // Menü kapalı başlayacağı için ekstra bir ayara gerek yok,
+    // main-content'in margin-left'i 0 olacak.
 
-    // Sayfa boyutu değiştiğinde boşluğu yeniden ayarla
-    window.addEventListener('resize', adjustMainContentMargin);
+    // Eğer sayfa bir hash ile yüklendiyse (örn: site.com/#soru-cevap), ilgili bölüme kaydır
+    if (window.location.hash) {
+         try {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+             if (targetElement) {
+                 // Sayfa yüklendikten kısa süre sonra kaydır
+                 setTimeout(() => {
+                      window.scrollTo({
+                           top: targetElement.offsetTop,
+                           behavior: 'smooth'
+                      });
+                 }, 100);
+             }
+         } catch (e) {
+             console.error("Hash ile kaydırmada hata:", e);
+         }
+    }
 });
