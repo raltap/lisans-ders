@@ -1,3 +1,8 @@
+:root {
+    --sidebar-width: 250px;
+    --sidebar-transition-speed: 0.3s;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -5,14 +10,14 @@ body {
     padding: 0;
     background-color: #f0f2f5;
     color: #333;
-    overflow-x: hidden; /* Yatayda kaydırmayı engelle */
+    overflow-x: hidden;
 }
 
 #menu-toggle {
-    position: fixed; /* Ekranda sabit kalsın */
+    position: fixed;
     top: 15px;
     left: 15px;
-    z-index: 1001; /* Menünün üzerinde dursun */
+    z-index: 1001;
     background-color: #007bff;
     color: white;
     border: none;
@@ -24,26 +29,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: left 0.3s ease; /* Menü açıldığında yumuşak geçiş */
+    transition: left var(--sidebar-transition-speed) ease;
 }
 
 #sidebar {
-    width: 250px; /* Kenar çubuğu genişliği */
-    background-color: #343a40; /* Koyu gri arkaplan */
+    width: var(--sidebar-width);
+    background-color: #343a40;
     color: white;
-    position: fixed; /* Ekranda sabit kalmasını sağlar */
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100%; /* Tam ekran yüksekliği */
-    overflow-y: auto; /* İçerik sığmazsa kaydırma çubuğu çıkar */
+    height: 100%;
+    overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%); /* Başlangıçta ekranın solunda gizli */
-    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    transition: transform var(--sidebar-transition-speed) ease;
     z-index: 1000;
 }
 
 #sidebar.open {
-    transform: translateX(0); /* "open" class'ı eklendiğinde görünsün */
+    transform: translateX(0);
 }
 
 .sidebar-title {
@@ -60,7 +65,7 @@ body {
 }
 
 .sidebar-nav li {
-    margin-bottom: 5px; /* Liste öğeleri arasına boşluk */
+    margin-bottom: 5px;
 }
 
 .sidebar-nav a {
@@ -77,15 +82,15 @@ body {
 }
 
 #main-content {
-    padding: 20px 40px; /* İçerik boşlukları */
-    transition: margin-left 0.3s ease; /* Menü açılıp kapandığında yumuşak geçiş */
+    padding: 20px 30px;
+    margin-left: 0; /* JS ile dinamik olarak ayarlanacak */
+    transition: margin-left var(--sidebar-transition-speed) ease;
     width: 100%;
-    box-sizing: border-box; /* Padding ve border genişliği etkilemesin */
+    box-sizing: border-box;
 }
 
-/* JavaScript ile dinamik olarak ayarlanacak */
 #main-content.sidebar-open {
-    /* margin-left: 250px; Bu JS ile yapılacak */
+    margin-left: var(--sidebar-width);
 }
 
 section {
@@ -149,4 +154,25 @@ hr {
     height: 1px;
     background-color: #ddd;
     margin: 30px 0;
+}
+
+/* Küçük ekranlar için mobil uyumluluk */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 220px; /* Mobilde menü daha dar olabilir */
+    }
+
+    #main-content.sidebar-open {
+        margin-left: 0; /* Mobilde menü açılınca içeriği ittirme, üstüne binsin */
+        /* Alternatif: margin-left: var(--sidebar-width); bu satırı kaldırabilirsiniz */
+    }
+
+    #main-content {
+        padding: 15px;
+    }
+
+     #menu-toggle {
+        top: 10px;
+        left: 10px;
+    }
 }
