@@ -74,7 +74,6 @@
              <hr>
              <h3>Muhtemel &#304;slami &#304;limler Ders Program&#305;:</h3>
              <p><img src="images/image7.png" alt="Muhtemel İslami İlimler Ders Programı"></p>
-             <p><img src="images/image11.png" alt="Muhtemel İslami İlimler Ders Programı Devamı"></p>
              <hr>
              <h3>Muhtemel Tarih Ders Program&#305;:</h3>
              <p><img src="images/image9.png" alt="Muhtemel Tarih Ders Programı"></p>
@@ -90,60 +89,85 @@
         </section>
 
         <section id="soru-cevap">
-            <h2>Soru Cevap</h2>
-             <hr>
-             <h3>1. Ders se&ccedil;imi nas&#305;l yap&#305;l&#305;yor?</h3>
-            <p>
-                <b>Cevap:</b>&nbsp;Okul ba&#351;lamadan yakla&#351;&#305;k bir hafta &ouml;nce OBS (&ouml;&#287;renci bilgi sistemi) &uuml;zerinden yap&#305;l&#305;yor. Bu s&uuml;re&ccedil; ba&#351;lamadan &ouml;nce genellikle Zoom &uuml;zerinden nas&#305;l yap&#305;laca&#287;&#305; anlat&#305;l&#305;yor. Derslerinizi se&ccedil;tikten sonra kesinle&#351;tiriyorsunuz. Kesinle&#351;tirmeden sonra da ment&ouml;r hocan&#305;n onaylamas&#305; gerekiyor. Onaylamazsa de&#287;i&#351;iklik yapman&#305;z gerekebilir.
-            </p>
-             <hr>
-             <h3>2. Ders se&ccedil;erken nelere dikkat etmeliyim?</h3>
-            <p><b>Cev:</b></p>
-            <ul>
-                <li>&#304;lk y&#305;l &ccedil;o&#287;u dersin ortak ve zorunlu oldu&#287;unu unutma.</li>
-                <li>Section (uygulama/saat grubu) se&ccedil;imi &ouml;nemli. &Ouml;zellikle arkada&#351;lar&#305;nla ayn&#305; s&#305;n&#305;fta olmak istiyorsan ayn&#305; section numaras&#305;n&#305; se&ccedil;melisin.</li>
-                <li>&#304;lk hafta se&ccedil;ti&#287;in section&rsquo;&#305; g&ouml;zlemleyip ikinci haftada daha iyi bir TF (Teaching Fellow) varsa de&#287;i&#351;iklik yapabilirsin.</li>
-                <li>Zorunlu derslerde &ccedil;ak&#305;&#351;ma olmas&#305; durumunda bir form doldurup dersin hocas&#305;na ve ment&ouml;r&uuml;ne imzalatman gerekebilir.</li>
-            </ul>
-             <hr>
-             <h3>3. Se&ccedil;meli ders almal&#305; m&#305;y&#305;m?</h3>
-            <p>
-                <b>Cevap:</b>&nbsp;Alabilirsin ama zorunlu de&#287;il. Genelde d&ouml;nemlik 30 AKTS (kredi) tamamlanmas&#305; gerekiyor. &Ccedil;o&#287;u ders 5 AKTS oldu&#287;undan 6 ders yeterli oluyor. Fazladan ders almak istersen, dersin &ouml;n ko&#351;ulu veya &ccedil;ak&#305;&#351;mas&#305; olmamas&#305; gerekiyor. Fakat ben ilk d&ouml;nemden almay&#305; pek &ouml;ner
-
-Harika, bu HTML çıktısı metin içeriğini ve yapısal ipuçlarını (başlıklar, listeler, linkler) elde etmek için çok iyi! Dokümanınızın tamamını bu şekilde elde ettiğimize göre, artık web sitesinin kodunu yazmaya başlayabilirim.
-
-HTML çıktısındaki karışık class isimlerini ve inline stilleri yok sayacağım, sadece içerikteki başlıkları (`<p>`, `<li>` içindeki kalın yazılar), paragrafları ve linkleri alıp temiz bir HTML yapısı içine yerleştireceğim. Resimler (`<img>`) `<p>` veya `<li>` etiketlerinin içine `style="overflow: hidden; display: inline-block; ..."` gibi uzun style kodlarıyla gömülmüş durumda. Bu biraz karmaşık ama bu resimleri de alıp web sitesine ekleyebiliriz.
-
-**Proje Planı:**
-
-1.  **HTML (`index.html`):**
-    *   Sayfanın temel yapısı.
-    *   Sabit, dar bir kenar menüsü (`#sidebar`).
-    *   Sağda geniş bir içerik alanı (`#main-content`).
-    *   Kenar menüsünde ana başlıklar için linkler olacak. Bu linklere tıklayınca sayfa ilgili bölüme kayacak.
-    *   Ana içerik alanında dokümanın bölümleri (`<section>` veya `<div>` etiketleriyle) yer alacak. Her bölüm bir ana başlıkla (`<h2>`) başlayacak ve altındaki metinler, alt başlıklar (`<h3>`), listeler (`<ul>`, `<li>`) ve linkler (`<a>`) bulunacak.
-    *   Resimler (ders programları gibi) ilgili bölümlere eklenecek.
-2.  **CSS (`style.css`):**
-    *   Genel sayfa görünümü, fontlar, renkler.
-    *   Kenar menüsünün boyutu, konumu (sabit olması), arkaplanı, link stilleri.
-    *   İçerik alanının boyutu, kenar boşlukları.
-    *   Başlıkların, paragrafların ve listelerin okunabilirliğini artıracak stiller.
-    *   Linklerin görünümü.
-    *   Resimlerin boyutu ve hizalaması için stiller.
-3.  **JavaScript (`script.js`):**
-    *   Kenar menüsündeki linklere tıklandığında sayfanın yumuşak bir şekilde ilgili bölüme kaymasını sağlayacak kod.
-
-Şimdi kodları hazırlayalım. Bu biraz zaman alacak, çünkü HTML çıktısını tek tek inceleyip içeriği yapılandırmam gerekiyor.
-
-**JSON dosyalarınızın bu site ile bir ilgisi YOKTUR. Bu, önceki quiz projenizden tamamen bağımsız yeni bir sitedir.**
-
----
-
-**Adım 1: HTML Kodu (`index.html`)**
-
-Dokümanınızın çıktısını analiz ederek içeriği HTML yapısı içine yerleştirdim. Kenar menüsü için ana başlıkları belirledim (SS'teki gibi).
-
-```html
+    <h2>Soru Cevap</h2>
+    <hr>
+    <h3>1. Ders seçimi nasıl yapılıyor?</h3>
+    <p>
+        <b>Cevap:</b> Okul başlamadan yaklaşık bir hafta önce OBS (öğrenci bilgi sistemi) üzerinden yapılıyor. Bu süreç başlamadan önce genellikle Zoom üzerinden nasıl yapılacağı anlatılıyor. Derslerinizi seçtikten sonra kesinleştiriyorsunuz. Kesinleştirmeden sonra da mentör hocanın onaylaması gerekiyor. Onaylamazsa değişiklik yapmanız gerekebilir.
+    </p>
+    <hr>
+    <h3>2. Ders seçerken nelere dikkat etmeliyim?</h3>
+    <p><b>Cevap:</b></p>
+    <ul>
+        <li>İlk yıl çoğu dersin ortak ve zorunlu olduğunu unutma.</li>
+        <li>Section (uygulama/saat grubu) seçimi önemli. Özellikle arkadaşlarınla aynı sınıfta olmak istiyorsan aynı section numarasını seçmelisin.</li>
+        <li>İlk hafta seçtiğin section’ı gözlemleyip ikinci haftada daha iyi bir TF (Teaching Fellow) varsa değişiklik yapabilirsin.</li>
+        <li>Zorunlu derslerde çakışma olması durumunda bir form doldurup dersin hocasına ve mentörüne imzalatman gerekebilir.</li>
+    </ul>
+    <hr>
+    <h3>3. Seçmeli ders almalı mıyım?</h3>
+    <p>
+        <b>Cevap:</b> Alabilirsin ama zorunlu değil. Genelde dönemlik 30 AKTS (kredi) tamamlanması gerekiyor. Çoğu ders 5 AKTS olduğundan 6 ders yeterli oluyor. Fazladan ders almak istersen, dersin ön koşulu veya çakışması olmaması gerekiyor. Fakat ben ilk dönemden almayı pek önermem. Sisteme alışmadan almak biraz zorlayabilir.
+    </p>
+    <hr>
+    <h3>4. Haftalık programı en boş şekilde nasıl ayarlayabilirim?</h3>
+    <p>
+        <b>Cevap:</b> 1. sınıfta programı çok esnek yapamıyorsun çünkü neredeyse tüm derslerimiz zorunlu oluyor. Zorunlu derslerin de saatleri belirli. Genelde her gün öğlene kadar dolu oluyorsun. Ancak section seçimiyle TF’lerini seçebilmen mümkün.
+    </p>
+    <hr>
+    <h3>5. Sınıf veya saat çakışmalarına nasıl dikkat etmeliyim?</h3>
+    <p>
+        <b>Cevap:</b> Ortak dersler genellikle çakışmayacak şekilde ayarlanır. Yine de çakışma olursa hocalardan ve mentör hocadan onay alman gerekir. Bunun için de bir form doldurup iki dersin hocasına ve mentörüne imzalatıp öğrenci işlerine vermen gerekiyor.
+    </p>
+    <hr>
+    <h3>6. Hocaları seçerken nelere dikkat etmeliyim?</h3>
+    <p>
+        <b>Cevap:</b> İlk sene çoğu hocayı seçemiyorsun çünkü dersler sabit. Section’lardaki TF’leri ise değiştirmen mümkün. İlk haftalarda gözlem yapıp en verimli bulduğun TF'nin section’una geçiş yapabilirsin.
+    </p>
+    <hr>
+    <h3>7. TLL'de hangi kitapları okuyoruz?</h3>
+    <p>
+        <b>Cevap:</b> Okunan kitaplar yıldan yıla göre değişiklik gösterebiliyor. Geçen senenin tüm kitaplarına TLL (Lisans Not) bölümündeki okumalardan bakabilirsin.
+    </p>
+    <hr>
+    <h3>8. Derslere nasıl çalışmalıyım, sen nasıl çalışıyordun?</h3>
+    <p><b>Cevap:</b></p>
+    <ul>
+        <li>Derse ve hocaya göre yöntem değişiyor.</li>
+        <li>Bazı derslere (örneğin NS) bir gün önceden çalışmak yeterli olurken, HUM ve HIST gibi derslerde kayıtları izlemek zaman aldığı için bir hafta önceden başladığım oldu HUM için.</li>
+        <li>Sınavdan önce arkadaşlarla toplanıp bildiklerimizi birbirimize anlatıp çalışıyorduk. Bu yöntem çoğu derste çok işimize yaradı.</li>
+        <li>Dersler özelinde daha detaylı bilgi genel bilgilendirme (Lisans Not) kısmında verildi.</li>
+    </ul>
+    <hr>
+    <h3>9. Lisans boyunca “keşke yapsaydım” dediğin şeyler neler?</h3>
+    <p><b>Cevap:</b></p>
+    <ul>
+        <li>Sistemi daha erken anlayabilmek çok iyi olurdu. Hangi dersleri derste dinleyip dinlemem gerektiği, hangisine daha çok çalışmak gerektiğini bilirdim.</li>
+        <li>TLL okumalarını zamanında yapmak discussion dersleri için faydalı olurdu.</li>
+        <li>HUM için kayıtları, HIST için belgeseller izlemek yardımcı olabilirdi.</li>
+        <li>Boş zamanlarda daha fazla dışarı çıkmak ve farklı aktiviteler yapsam güzel olabilirmiş.</li>
+    </ul>
+    <hr>
+    <h3>10. Yeni başlayan biri olarak yapmamı / yapmamamı önerdiğin şeyler neler?</h3>
+    <p>
+        <b>Cevap:</b> Bu kısmı detaylı olarak Genel Bilgilendirme Lisans Not kısmına yazdım. Oradan bakabilirsin.
+    </p>
+    <hr>
+    <h3>12. Yazın lisans için bir şey yapmalı mıyım? (TLL kitaplarını okumak gibi)</h3>
+    <p>
+        <b>Cevap:</b> TLL okumaları dışında çok bir şey yapmana gerek yok. Diğer derslerde sınavdan önceki çalışmalar yeterli oluyor. Belki tarih dersleri için belgesel tarzı videolar izleyebilirsin.
+    </p>
+    <hr>
+    <h3>13. Toplu derslerde hocalar ne kadar İngilizce kullanıyor? Kullandıkları İngilizce ağır mı?</h3>
+    <p>
+        <b>Cevap:</b> Türkçe hariç tüm derslerde hocalar tam İngilizce konuşuyor. Ancak kullanılan İngilizce oldukça basit ve anlaşılabilir seviyede. Zorlayıcı akademik bir dil yerine sade ve ders odaklı bir dil tercih ediliyor. Örnek ders kayıtlarını izleyerek bu konuda fikir sahibi olabilirsiniz. Yine de sınavlar yazılı ve çoğu zaman kağıt üzerinden yapıldığı için, kendi İngilizce yazma becerinizi geliştirmeniz önemli olur.
+    </p>
+    <hr>
+    <h3>14. Yoklamalar nasıl işliyor? Ne kadar devamsızlık hakkımız var?</h3>
+    <p>
+        <b>Cevap:</b> Tüm derslerin %80’ine katılmak zorunlu. Yani %20 oranında devamsızlık hakkınız var. Amfi derslerinde genellikle yoklama alınmasa da bu durum hocadan hocaya değişiyor. Örneğin Emine Hoca yoklama almazken, Halil Hoca iki dönem boyunca da yoklama aldı. Ancak <b>Discussion</b> dersleri istisnasız zorunlu. Hocalar bu derslere oldukça önem veriyor. Discussion derslerinde genellikle 2 hafta kadar devamsızlık hakkınız olur. Eğer %20 sınırını aşarsanız, bu durum notlarınıza doğrudan yansır ve bir puan düşürülür. Bu nedenle yoklamalara dikkat etmekte fayda var.
+    </p>
+</section>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
